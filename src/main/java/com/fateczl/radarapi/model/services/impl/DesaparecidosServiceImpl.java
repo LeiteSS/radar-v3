@@ -23,7 +23,7 @@ public class DesaparecidosServiceImpl implements DesaparecidosService {
     public Desaparecido save(DesaparecidoDTO dto) {
         Desaparecido desaparecidoConvert = dto.toModel(dto);
 
-        enderecosRepository.save(desaparecidoConvert.getEndereco());
+        enderecosRepository.saveAll(desaparecidoConvert.getEndereco());
 
         return  desaparecidosRepository.save(desaparecidoConvert);
     }

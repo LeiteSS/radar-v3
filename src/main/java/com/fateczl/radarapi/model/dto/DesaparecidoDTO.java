@@ -2,7 +2,6 @@ package com.fateczl.radarapi.model.dto;
 
 import com.fateczl.radarapi.model.entities.Desaparecido;
 import com.fateczl.radarapi.model.entities.Endereco;
-import com.fateczl.radarapi.model.entities.Foto;
 
 import java.util.List;
 
@@ -12,8 +11,7 @@ public class DesaparecidoDTO {
     private String descricaoDesaparecido;
     private String dataNascimento;
     private String recompensa;
-    private Endereco enderecoDTO;
-    private List<Foto> fotoList;
+    private List<Endereco> enderecoDTO;
     private String possuiDoenca;
     private String corDePeleDesaparecido;
     private String tatuagemDesaparecido;
@@ -23,14 +21,13 @@ public class DesaparecidoDTO {
     public DesaparecidoDTO() {
     }
 
-    public DesaparecidoDTO(String nomeDesaparecido, String dataDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, Endereco enderecoDTO, List<Foto> fotoList, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido) {
+    public DesaparecidoDTO(String nomeDesaparecido, String dataDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, List<Endereco> enderecoDTO, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido) {
         this.nomeDesaparecido = nomeDesaparecido;
         this.dataDesaparecimento = dataDesaparecimento;
         this.descricaoDesaparecido = descricaoDesaparecido;
         this.dataNascimento = dataNascimento;
         this.recompensa = recompensa;
         this.enderecoDTO = enderecoDTO;
-        this.fotoList = fotoList;
         this.possuiDoenca = possuiDoenca;
         this.corDePeleDesaparecido = corDePeleDesaparecido;
         this.tatuagemDesaparecido = tatuagemDesaparecido;
@@ -78,20 +75,12 @@ public class DesaparecidoDTO {
         this.recompensa = recompensa;
     }
 
-    public Endereco getEndereco() {
+    public List<Endereco> getEndereco() {
         return enderecoDTO;
     }
 
-    public void setEndereco(Endereco enderecoDTO) {
+    public void setEndereco(List<Endereco> enderecoDTO) {
         this.enderecoDTO = enderecoDTO;
-    }
-
-    public List<Foto> getFotoList() {
-        return fotoList;
-    }
-
-    public void setFotoList(List<Foto> fotoList) {
-        this.fotoList = fotoList;
     }
 
     public String getPossuiDoenca() {
@@ -142,7 +131,6 @@ public class DesaparecidoDTO {
                 dto.getDataNascimento(),
                 dto.getRecompensa(),
                 dto.getEndereco(),
-                dto.getFotoList(),
                 dto.getPossuiDoenca(),
                 dto.getCorDePeleDesaparecido(),
                 dto.getTatuagemDesaparecido(),
