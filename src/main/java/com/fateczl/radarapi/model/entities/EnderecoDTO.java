@@ -3,7 +3,7 @@ package com.fateczl.radarapi.model.entities;
 import javax.persistence.*;
 
 @Entity
-public class Endereco {
+public class EnderecoDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,10 +27,10 @@ public class Endereco {
     @Column(nullable = false)
     private String uf;
 
-    public Endereco() {
+    public EnderecoDTO() {
     }
 
-    public Endereco(Long idEndereco, String cep, String logradouro, String complemento, String bairro, String cidade, String uf) {
+    public EnderecoDTO(Long idEndereco, String cep, String logradouro, String complemento, String bairro, String cidade, String uf) {
         this.idEndereco = idEndereco;
         this.cep = cep;
         this.logradouro = logradouro;
