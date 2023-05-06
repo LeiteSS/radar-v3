@@ -1,5 +1,7 @@
 package com.fateczl.radarapi.model.dto;
 
+import com.fateczl.radarapi.model.entities.Endereco;
+
 public class EnderecoDTO {
     private String cep;
     private String logradouro;
@@ -68,8 +70,8 @@ public class EnderecoDTO {
         this.uf = uf;
     }
 
-    public com.fateczl.radarapi.model.entities.EnderecoDTO toModel(EnderecoDTO dto) {
-        com.fateczl.radarapi.model.entities.EnderecoDTO enderecoDTO = new com.fateczl.radarapi.model.entities.EnderecoDTO();
+    public Endereco toModel(EnderecoDTO dto) {
+        Endereco enderecoDTO = new Endereco();
 
         enderecoDTO.setLogradouro(dto.getLogradouro());
         enderecoDTO.setBairro(dto.getBairro());

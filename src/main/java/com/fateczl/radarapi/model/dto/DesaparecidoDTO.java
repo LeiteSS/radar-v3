@@ -1,7 +1,7 @@
 package com.fateczl.radarapi.model.dto;
 
 import com.fateczl.radarapi.model.entities.Desaparecido;
-import com.fateczl.radarapi.model.entities.EnderecoDTO;
+import com.fateczl.radarapi.model.entities.Endereco;
 import com.fateczl.radarapi.model.entities.Foto;
 
 import java.util.List;
@@ -12,7 +12,7 @@ public class DesaparecidoDTO {
     private String descricaoDesaparecido;
     private String dataNascimento;
     private String recompensa;
-    private EnderecoDTO enderecoDTO;
+    private Endereco enderecoDTO;
     private List<Foto> fotoList;
     private String possuiDoenca;
     private String corDePeleDesaparecido;
@@ -23,7 +23,7 @@ public class DesaparecidoDTO {
     public DesaparecidoDTO() {
     }
 
-    public DesaparecidoDTO(String nomeDesaparecido, String dataDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, EnderecoDTO enderecoDTO, List<Foto> fotoList, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido) {
+    public DesaparecidoDTO(String nomeDesaparecido, String dataDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, Endereco enderecoDTO, List<Foto> fotoList, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido) {
         this.nomeDesaparecido = nomeDesaparecido;
         this.dataDesaparecimento = dataDesaparecimento;
         this.descricaoDesaparecido = descricaoDesaparecido;
@@ -78,11 +78,11 @@ public class DesaparecidoDTO {
         this.recompensa = recompensa;
     }
 
-    public EnderecoDTO getEndereco() {
+    public Endereco getEndereco() {
         return enderecoDTO;
     }
 
-    public void setEndereco(EnderecoDTO enderecoDTO) {
+    public void setEndereco(Endereco enderecoDTO) {
         this.enderecoDTO = enderecoDTO;
     }
 
