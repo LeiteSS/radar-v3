@@ -33,12 +33,12 @@ public class VoluntariosController {
         return ResponseEntity.ok(service.getVoluntario(id));
     }
 
-    @PutMapping("/funcionarios/{id}")
+    @PutMapping("/voluntarios/{id}")
     public ResponseEntity<Voluntario> update(@PathVariable Long id, @RequestBody VoluntarioDTO dto) {
         return ResponseEntity.ok(service.update(id, dto));
     }
 
-    @DeleteMapping("/funcionarios/{id}")
+    @DeleteMapping("/voluntarios/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
         service.delete(id);

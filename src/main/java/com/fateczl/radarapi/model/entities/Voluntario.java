@@ -2,6 +2,7 @@ package com.fateczl.radarapi.model.entities;
 
 import javax.persistence.*;
 
+@Entity
 public class Voluntario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

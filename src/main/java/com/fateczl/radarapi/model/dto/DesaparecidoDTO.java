@@ -8,6 +8,9 @@ import java.util.List;
 
 public class DesaparecidoDTO {
     private String nomeDesaparecido;
+
+    private String sobrenomeDesaparecido;
+
     private String dataDesaparecimento;
     private String descricaoDesaparecido;
     private String dataNascimento;
@@ -22,21 +25,29 @@ public class DesaparecidoDTO {
     private String cicatriz;
     private Double tamanhoDesaparecido;
 
+    private String sexoDesaparecido;
+
+    private String horaDesaparecimento;
+
     public DesaparecidoDTO() {
     }
 
-    public DesaparecidoDTO(String nomeDesaparecido, String dataDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, List<Endereco> enderecoDTO, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido) {
+    public DesaparecidoDTO(String nomeDesaparecido, String sobrenomeDesaparecido, String dataDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, List<Endereco> enderecoDTO, List<Foto> fotos, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido, String sexoDesaparecido, String horaDesaparecimento) {
         this.nomeDesaparecido = nomeDesaparecido;
+        this.sobrenomeDesaparecido = sobrenomeDesaparecido;
         this.dataDesaparecimento = dataDesaparecimento;
         this.descricaoDesaparecido = descricaoDesaparecido;
         this.dataNascimento = dataNascimento;
         this.recompensa = recompensa;
         this.enderecoDTO = enderecoDTO;
+        this.fotos = fotos;
         this.possuiDoenca = possuiDoenca;
         this.corDePeleDesaparecido = corDePeleDesaparecido;
         this.tatuagemDesaparecido = tatuagemDesaparecido;
         this.cicatriz = cicatriz;
         this.tamanhoDesaparecido = tamanhoDesaparecido;
+        this.sexoDesaparecido = sexoDesaparecido;
+        this.horaDesaparecimento = horaDesaparecimento;
     }
 
     public String getNomeDesaparecido() {
@@ -143,10 +154,36 @@ public class DesaparecidoDTO {
         this.fotos = fotos;
     }
 
+    public String getSobrenomeDesaparecido() {
+        return sobrenomeDesaparecido;
+    }
+
+    public void setSobrenomeDesaparecido(String sobrenomeDesaparecido) {
+        this.sobrenomeDesaparecido = sobrenomeDesaparecido;
+    }
+
+    public String getSexoDesaparecido() {
+        return sexoDesaparecido;
+    }
+
+    public void setSexoDesaparecido(String sexoDesaparecido) {
+        this.sexoDesaparecido = sexoDesaparecido;
+    }
+
+    public String getHoraDesaparecimento() {
+        return horaDesaparecimento;
+    }
+
+    public void setHoraDesaparecimento(String horaDesaparecimento) {
+        this.horaDesaparecimento = horaDesaparecimento;
+    }
+
     public Desaparecido toModel(DesaparecidoDTO dto) {
         Desaparecido desaparecido = new Desaparecido(
                 dto.getNomeDesaparecido(),
+                dto.getSobrenomeDesaparecido(),
                 dto.getDataDesaparecimento(),
+                dto.getHoraDesaparecimento(),
                 dto.getDescricaoDesaparecido(),
                 dto.getDataNascimento(),
                 dto.getRecompensa(),
@@ -156,7 +193,8 @@ public class DesaparecidoDTO {
                 dto.getCorDePeleDesaparecido(),
                 dto.getTatuagemDesaparecido(),
                 dto.getCicatriz(),
-                dto.getTamanhoDesaparecido()
+                dto.getTamanhoDesaparecido(),
+                dto.getSexoDesaparecido()
         );
 
         return desaparecido;

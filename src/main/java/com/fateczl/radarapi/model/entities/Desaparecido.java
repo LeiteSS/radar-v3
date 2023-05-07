@@ -13,7 +13,13 @@ public class Desaparecido {
     private String nomeDesaparecido;
 
     @Column(nullable = false)
+    private String sobrenomeDesaparecido;
+
+    @Column(nullable = false)
     private String dataDesaparecimento;
+
+    @Column(nullable = false)
+    private String horaDesaparecimento;
 
     @Column(nullable = false)
     private String descricaoDesaparecido;
@@ -45,13 +51,18 @@ public class Desaparecido {
     @Column(nullable = false)
     private Double tamanhoDesaparecido;
 
+    @Column(nullable = false)
+    private String sexoDesaparecido;
+
     public Desaparecido() {
     }
 
-    public Desaparecido(Long idDesaparecido, String nomeDesaparecido, String dataDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, List<Endereco> endereco, List<Foto> fotos, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido) {
+    public Desaparecido(Long idDesaparecido, String nomeDesaparecido, String sobrenomeDesaparecido, String dataDesaparecimento, String horaDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, List<Endereco> endereco, List<Foto> fotos, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido, String sexoDesaparecido) {
         this.idDesaparecido = idDesaparecido;
         this.nomeDesaparecido = nomeDesaparecido;
+        this.sobrenomeDesaparecido = sobrenomeDesaparecido;
         this.dataDesaparecimento = dataDesaparecimento;
+        this.horaDesaparecimento = horaDesaparecimento;
         this.descricaoDesaparecido = descricaoDesaparecido;
         this.dataNascimento = dataNascimento;
         this.recompensa = recompensa;
@@ -62,10 +73,14 @@ public class Desaparecido {
         this.tatuagemDesaparecido = tatuagemDesaparecido;
         this.cicatriz = cicatriz;
         this.tamanhoDesaparecido = tamanhoDesaparecido;
+        this.sexoDesaparecido = sexoDesaparecido;
     }
-    public Desaparecido(String nomeDesaparecido, String dataDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, List<Endereco> endereco, List<Foto> fotos, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido) {
+
+    public Desaparecido(String nomeDesaparecido, String sobrenomeDesaparecido, String dataDesaparecimento, String horaDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, List<Endereco> endereco, List<Foto> fotos, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido, String sexoDesaparecido) {
         this.nomeDesaparecido = nomeDesaparecido;
+        this.sobrenomeDesaparecido = sobrenomeDesaparecido;
         this.dataDesaparecimento = dataDesaparecimento;
+        this.horaDesaparecimento = horaDesaparecimento;
         this.descricaoDesaparecido = descricaoDesaparecido;
         this.dataNascimento = dataNascimento;
         this.recompensa = recompensa;
@@ -76,6 +91,7 @@ public class Desaparecido {
         this.tatuagemDesaparecido = tatuagemDesaparecido;
         this.cicatriz = cicatriz;
         this.tamanhoDesaparecido = tamanhoDesaparecido;
+        this.sexoDesaparecido = sexoDesaparecido;
     }
 
     public Long getIdDesaparecido() {
@@ -180,5 +196,29 @@ public class Desaparecido {
 
     public void setFotos(List<Foto> fotos) {
         this.fotos = fotos;
+    }
+
+    public String getSobrenomeDesaparecido() {
+        return sobrenomeDesaparecido;
+    }
+
+    public void setSobrenomeDesaparecido(String sobrenomeDesaparecido) {
+        this.sobrenomeDesaparecido = sobrenomeDesaparecido;
+    }
+
+    public String getHoraDesaparecimento() {
+        return horaDesaparecimento;
+    }
+
+    public void setHoraDesaparecimento(String horaDesaparecimento) {
+        this.horaDesaparecimento = horaDesaparecimento;
+    }
+
+    public String getSexoDesaparecido() {
+        return sexoDesaparecido;
+    }
+
+    public void setSexoDesaparecido(String sexoDesaparecido) {
+        this.sexoDesaparecido = sexoDesaparecido;
     }
 }
