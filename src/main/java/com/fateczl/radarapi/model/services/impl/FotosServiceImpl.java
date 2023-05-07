@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @Service
 public class FotosServiceImpl implements FotosService {
@@ -24,15 +25,12 @@ public class FotosServiceImpl implements FotosService {
     }
 
     @Override
-    public Foto getByName(String name) {
+    public Foto getImage(Long id) {
         return null;
     }
 
     @Override
-    public byte[] getImage(Desaparecido desaparecido) {
-        Optional<Foto> images = fotosRepository.findByDesaparecido(desaparecido);
-        byte[] image = ImageUtil.decompressImage(images.get().getImageBytes());
-
-        return image;
+    public Stream<Foto> getAll() {
+        return null;
     }
 }

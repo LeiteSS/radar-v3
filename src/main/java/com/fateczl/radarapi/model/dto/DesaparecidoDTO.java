@@ -2,6 +2,7 @@ package com.fateczl.radarapi.model.dto;
 
 import com.fateczl.radarapi.model.entities.Desaparecido;
 import com.fateczl.radarapi.model.entities.Endereco;
+import com.fateczl.radarapi.model.entities.Foto;
 
 import java.util.List;
 
@@ -12,6 +13,9 @@ public class DesaparecidoDTO {
     private String dataNascimento;
     private String recompensa;
     private List<Endereco> enderecoDTO;
+
+    private List<Foto> fotos;
+
     private String possuiDoenca;
     private String corDePeleDesaparecido;
     private String tatuagemDesaparecido;
@@ -123,6 +127,22 @@ public class DesaparecidoDTO {
         this.tamanhoDesaparecido = tamanhoDesaparecido;
     }
 
+    public List<Endereco> getEnderecoDTO() {
+        return enderecoDTO;
+    }
+
+    public void setEnderecoDTO(List<Endereco> enderecoDTO) {
+        this.enderecoDTO = enderecoDTO;
+    }
+
+    public List<Foto> getFotos() {
+        return fotos;
+    }
+
+    public void setFotos(List<Foto> fotos) {
+        this.fotos = fotos;
+    }
+
     public Desaparecido toModel(DesaparecidoDTO dto) {
         Desaparecido desaparecido = new Desaparecido(
                 dto.getNomeDesaparecido(),
@@ -131,6 +151,7 @@ public class DesaparecidoDTO {
                 dto.getDataNascimento(),
                 dto.getRecompensa(),
                 dto.getEndereco(),
+                dto.getFotos(),
                 dto.getPossuiDoenca(),
                 dto.getCorDePeleDesaparecido(),
                 dto.getTatuagemDesaparecido(),

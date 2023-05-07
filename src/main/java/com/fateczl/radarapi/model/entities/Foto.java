@@ -17,8 +17,6 @@ public class Foto {
     @Column(nullable = true)
     private String type;
 
-    @ManyToOne
-    private Desaparecido desaparecido;
 
     @Lob
     @Column(columnDefinition = "BLOB")
@@ -89,7 +87,6 @@ public class Foto {
         private String altText;
         private String name;
         private String type;
-        private Desaparecido desaparecido;
         private byte[] imageBytes;
 
         public FotoBuilder(String altText, String name, String type, byte[] imageBytes) {
@@ -111,9 +108,6 @@ public class Foto {
             this.type = type;
         }
 
-        public void setDesaparecido(Desaparecido desaparecido) {
-            this.desaparecido = desaparecido;
-        }
 
         public void setImageBytes(byte[] imageBytes) {
             this.imageBytes = imageBytes;
