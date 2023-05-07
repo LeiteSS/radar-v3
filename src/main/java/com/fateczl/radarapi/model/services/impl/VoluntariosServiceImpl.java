@@ -7,10 +7,12 @@ import com.fateczl.radarapi.model.repository.EnderecosRepository;
 import com.fateczl.radarapi.model.repository.VoluntariosRepository;
 import com.fateczl.radarapi.model.services.VoluntariosService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class VoluntariosServiceImpl implements VoluntariosService {
     @Autowired
     private VoluntariosRepository voluntariosRepository;
