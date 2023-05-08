@@ -17,15 +17,17 @@ public class Foto {
     @Column(nullable = true)
     private String type;
 
+    @Column(nullable = false)
+    private String imageBytes;
 
-    @Lob
+    /*@Lob
     @Column(columnDefinition = "BLOB")
-    private byte[] imageBytes;
+    private byte[] imageBytes;*/
 
     public Foto() {
     }
 
-    public Foto(Long idFoto, String altText, String name, String type, byte[] imageBytes) {
+    public Foto(Long idFoto, String altText, String name, String type, String imageBytes) {
         this.idFoto = idFoto;
         this.altText = altText;
         this.name = name;
@@ -57,11 +59,11 @@ public class Foto {
         this.altText = altText;
     }
 
-    public byte[] getImageBytes() {
+    public String getImageBytes() {
         return imageBytes;
     }
 
-    public void setImageBytes(byte[] imageBytes) {
+    public void setImageBytes(String imageBytes) {
         this.imageBytes = imageBytes;
     }
 
@@ -87,9 +89,9 @@ public class Foto {
         private String altText;
         private String name;
         private String type;
-        private byte[] imageBytes;
+        private String imageBytes;
 
-        public FotoBuilder(String altText, String name, String type, byte[] imageBytes) {
+        public FotoBuilder(String altText, String name, String type, String imageBytes) {
             this.altText = altText;
             this.name = name;
             this.type = type;
@@ -109,7 +111,7 @@ public class Foto {
         }
 
 
-        public void setImageBytes(byte[] imageBytes) {
+        public void setImageBytes(String imageBytes) {
             this.imageBytes = imageBytes;
         }
 

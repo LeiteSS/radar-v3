@@ -21,7 +21,7 @@ public class Desaparecido {
     @Column(nullable = false)
     private String horaDesaparecimento;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "LONGTEXT")
     private String descricaoDesaparecido;
 
     @Column(nullable = false)

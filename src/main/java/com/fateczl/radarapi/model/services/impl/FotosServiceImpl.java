@@ -21,7 +21,8 @@ public class FotosServiceImpl implements FotosService {
 
     @Override
     public Foto upload(MultipartFile file) throws IOException {
-        return fotosRepository.save(new Foto.FotoBuilder(file.getOriginalFilename(), file.getName(), file.getContentType(), file.getBytes()).build());
+        //return fotosRepository.save(new Foto.FotoBuilder(file.getOriginalFilename(), file.getName(), file.getContentType(), file.getBytes()).build());
+        return null;
     }
 
     @Override
