@@ -2,7 +2,7 @@ package com.fateczl.radarapi.controller;
 
 import com.fateczl.radarapi.model.dto.VoluntarioDTO;
 import com.fateczl.radarapi.model.entities.Voluntario;
-import com.fateczl.radarapi.model.services.VoluntarioService;
+import com.fateczl.radarapi.model.services.VoluntariosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,13 +12,11 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-//@CrossOrigin allow everyone
 @CrossOrigin("*")
-@RequestMapping("/api/v1/voluntarios")
-public class VoluntariosController{
-
+@RequestMapping("/api/v1")
+public class VoluntariosController {
     @Autowired
-    private VoluntarioService service;
+    private VoluntariosService service;
 
     @PostMapping("/voluntarios")
     public ResponseEntity<Voluntario> save(@RequestBody VoluntarioDTO dto) {
@@ -27,7 +25,7 @@ public class VoluntariosController{
 
     @GetMapping("/voluntarios")
     public ResponseEntity<List<Voluntario>> getAll() {
-        return ResponseEntity.ok(service.listAll());
+        return ResponseEntity.ok(service.getAll());
     }
 
     @GetMapping("/voluntarios/{id}")
@@ -45,4 +43,5 @@ public class VoluntariosController{
     public void delete(@PathVariable Long id) {
         service.delete(id);
     }
+
 }
