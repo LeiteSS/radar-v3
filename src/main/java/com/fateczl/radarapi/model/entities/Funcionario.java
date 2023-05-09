@@ -24,7 +24,7 @@ public class Funcionario {
     @Column(nullable = false)
     private String dataNascimento;
 
-    public Endereco getEndereco() {
+   /* public Endereco getEndereco() {
         return endereco;
     }
 
@@ -33,7 +33,7 @@ public class Funcionario {
     }
 
     @OneToOne
-    private Endereco endereco;
+    private Endereco endereco;*/
 
     public Funcionario() {
     }
@@ -47,13 +47,13 @@ public class Funcionario {
         this.dataNascimento = dataNascimento;
     }
 
-    public Funcionario(String nome, String sobrenome, String cpf, String email, String dataNascimento, Endereco endereco) {
+    public Funcionario(String nome, String sobrenome, String cpf, String email, String dataNascimento) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.cpf = cpf;
         this.email = email;
         this.dataNascimento = dataNascimento;
-        this.endereco = endereco;
+        //this.endereco = endereco;
     }
 
     public Long getId() {

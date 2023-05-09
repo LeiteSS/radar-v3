@@ -15,9 +15,9 @@ public class DesaparecidoDTO {
     private String descricaoDesaparecido;
     private String dataNascimento;
     private String recompensa;
-    private List<Endereco> enderecoDTO;
+    private Endereco enderecoDTO;
 
-    private List<Foto> fotos;
+    private List<String> fotos;
 
     private String possuiDoenca;
     private String corDePeleDesaparecido;
@@ -32,7 +32,7 @@ public class DesaparecidoDTO {
     public DesaparecidoDTO() {
     }
 
-    public DesaparecidoDTO(String nomeDesaparecido, String sobrenomeDesaparecido, String dataDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, List<Endereco> enderecoDTO, List<Foto> fotos, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido, String sexoDesaparecido, String horaDesaparecimento) {
+    public DesaparecidoDTO(String nomeDesaparecido, String sobrenomeDesaparecido, String dataDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, Endereco enderecoDTO, List<String> fotos, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido, String sexoDesaparecido, String horaDesaparecimento) {
         this.nomeDesaparecido = nomeDesaparecido;
         this.sobrenomeDesaparecido = sobrenomeDesaparecido;
         this.dataDesaparecimento = dataDesaparecimento;
@@ -90,11 +90,11 @@ public class DesaparecidoDTO {
         this.recompensa = recompensa;
     }
 
-    public List<Endereco> getEndereco() {
+    public Endereco getEndereco() {
         return enderecoDTO;
     }
 
-    public void setEndereco(List<Endereco> enderecoDTO) {
+    public void setEndereco(Endereco enderecoDTO) {
         this.enderecoDTO = enderecoDTO;
     }
 
@@ -138,19 +138,12 @@ public class DesaparecidoDTO {
         this.tamanhoDesaparecido = tamanhoDesaparecido;
     }
 
-    public List<Endereco> getEnderecoDTO() {
-        return enderecoDTO;
-    }
 
-    public void setEnderecoDTO(List<Endereco> enderecoDTO) {
-        this.enderecoDTO = enderecoDTO;
-    }
-
-    public List<Foto> getFotos() {
+    public List<String> getFotos() {
         return fotos;
     }
 
-    public void setFotos(List<Foto> fotos) {
+    public void setFotos(List<String> fotos) {
         this.fotos = fotos;
     }
 

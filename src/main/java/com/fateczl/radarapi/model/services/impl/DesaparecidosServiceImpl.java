@@ -26,13 +26,15 @@ public class DesaparecidosServiceImpl implements DesaparecidosService {
 
     @Override
     @Transactional
-    public Desaparecido save(DesaparecidoDTO dto) {
-        Desaparecido desaparecidoConvert = dto.toModel(dto);
+    public Desaparecido save(Desaparecido dto) {
 
-        enderecosRepository.saveAll(desaparecidoConvert.getEndereco());
-        fotosRepository.saveAll(desaparecidoConvert.getFotos());
 
-        return  desaparecidosRepository.save(desaparecidoConvert);
+        //Desaparecido desaparecidoConvert = dto.toModel(dto);
+
+        enderecosRepository.save(dto.getEndereco());
+        //fotosRepository.saveAll(desaparecidoConvert.getFotos());
+
+        return  desaparecidosRepository.save(dto);
     }
 
     @Override
@@ -47,11 +49,11 @@ public class DesaparecidosServiceImpl implements DesaparecidosService {
 
     @Override
     @Transactional
-    public Desaparecido update(Long id, DesaparecidoDTO dto) {
-        Desaparecido desaparecidoConvert = dto.toModel(dto);
-        desaparecidoConvert.setIdDesaparecido(id);
+    public Desaparecido update(Long id, Desaparecido dto) {
+        //Desaparecido desaparecidoConvert = dto.toModel(dto);
+        dto.setIdDesaparecido(id);
 
-        return desaparecidosRepository.save(desaparecidoConvert);
+        return desaparecidosRepository.save(dto);
     }
 
     @Override

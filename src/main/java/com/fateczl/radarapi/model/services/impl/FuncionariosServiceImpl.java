@@ -25,7 +25,7 @@ public class FuncionariosServiceImpl implements FuncionariosService {
     public Funcionario save(FuncionarioDTO dto) {
         Funcionario funcionario = dto.toModel(dto);
 
-        enderecosRepository.save(funcionario.getEndereco());
+        //enderecosRepository.save(funcionario.getEndereco());
 
         return funcionariosRepository.save(funcionario);
     }
@@ -46,9 +46,9 @@ public class FuncionariosServiceImpl implements FuncionariosService {
 
         funcionario.setId(id);
 
-        Endereco endereco = enderecosRepository.getReferenceById(funcionario.getEndereco().getIdEndereco());
+        /*Endereco endereco = enderecosRepository.getReferenceById(funcionario.getEndereco().getIdEndereco());
         endereco.setIdEnderec(funcionario.getEndereco().getIdEndereco());
-        enderecosRepository.save(endereco);
+        enderecosRepository.save(endereco);*/
 
         return funcionariosRepository.save(funcionario);
     }

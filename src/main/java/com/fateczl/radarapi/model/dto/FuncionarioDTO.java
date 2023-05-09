@@ -12,18 +12,18 @@ public class FuncionarioDTO {
     private String cpf;
     private String email;
     private String dataNascimento;
-    private Endereco endereco;
+    //private Endereco endereco;
 
     public FuncionarioDTO() {
     }
 
-    public FuncionarioDTO(String nome, String sobrenome, String cpf, String email, String dataNascimento, Endereco endereco) {
+    public FuncionarioDTO(String nome, String sobrenome, String cpf, String email, String dataNascimento) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.cpf = cpf;
         this.email = email;
         this.dataNascimento = dataNascimento;
-        this.endereco = endereco;
+        //this.endereco = endereco;
     }
 
     public String getNome() {
@@ -66,13 +66,13 @@ public class FuncionarioDTO {
         this.dataNascimento = dataNascimento;
     }
 
-    public Endereco getEndereco() {
+    /*public Endereco getEndereco() {
         return endereco;
     }
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
-    }
+    }*/
 
     public Funcionario toModel(FuncionarioDTO dto) {
         return new Funcionario(
@@ -80,8 +80,8 @@ public class FuncionarioDTO {
                 dto.getSobrenome(),
                 dto.getCpf(),
                 dto.getEmail(),
-                dto.getDataNascimento(),
-                dto.getEndereco()
+                dto.getDataNascimento()
+                //dto.getEndereco()
         );
     }
 }

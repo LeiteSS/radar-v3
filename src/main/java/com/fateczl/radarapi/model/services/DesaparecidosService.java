@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface DesaparecidosService {
-    Desaparecido save(DesaparecidoDTO dto);
+    Desaparecido save(Desaparecido dto);
     List<Desaparecido> listAll();
     Optional<Desaparecido> getDesaparecido(Long id);
-    Desaparecido update(Long id, DesaparecidoDTO dto);
+    Desaparecido update(Long id, Desaparecido dto);
     void delete(Long id);
 }

@@ -30,11 +30,17 @@ public class Desaparecido {
     @Column(nullable = false)
     private String recompensa;
 
-    @OneToMany
-    private List<Endereco> endereco;
+    @OneToOne
+    private Endereco endereco;
 
-    @OneToMany
-    private List<Foto> fotos;
+    /*@OneToMany
+    private List<Foto> fotos;*/
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "desaparecidos_fotos", joinColumns = @JoinColumn(name = "id_desaparecido"))
+    @Column(name = "fotos_id")
+    private List<String> fotos;
+
 
     @Column(nullable = false)
     private String possuiDoenca;
@@ -57,7 +63,7 @@ public class Desaparecido {
     public Desaparecido() {
     }
 
-    public Desaparecido(Long idDesaparecido, String nomeDesaparecido, String sobrenomeDesaparecido, String dataDesaparecimento, String horaDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, List<Endereco> endereco, List<Foto> fotos, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido, String sexoDesaparecido) {
+    public Desaparecido(Long idDesaparecido, String nomeDesaparecido, String sobrenomeDesaparecido, String dataDesaparecimento, String horaDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, Endereco endereco, List<String> fotos, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido, String sexoDesaparecido) {
         this.idDesaparecido = idDesaparecido;
         this.nomeDesaparecido = nomeDesaparecido;
         this.sobrenomeDesaparecido = sobrenomeDesaparecido;
@@ -76,7 +82,7 @@ public class Desaparecido {
         this.sexoDesaparecido = sexoDesaparecido;
     }
 
-    public Desaparecido(String nomeDesaparecido, String sobrenomeDesaparecido, String dataDesaparecimento, String horaDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, List<Endereco> endereco, List<Foto> fotos, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido, String sexoDesaparecido) {
+    public Desaparecido(String nomeDesaparecido, String sobrenomeDesaparecido, String dataDesaparecimento, String horaDesaparecimento, String descricaoDesaparecido, String dataNascimento, String recompensa, Endereco endereco, List<String> fotos, String possuiDoenca, String corDePeleDesaparecido, String tatuagemDesaparecido, String cicatriz, Double tamanhoDesaparecido, String sexoDesaparecido) {
         this.nomeDesaparecido = nomeDesaparecido;
         this.sobrenomeDesaparecido = sobrenomeDesaparecido;
         this.dataDesaparecimento = dataDesaparecimento;
@@ -142,11 +148,11 @@ public class Desaparecido {
         this.recompensa = recompensa;
     }
 
-    public List<Endereco> getEndereco() {
+    public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(List<Endereco> enderecoDTO) {
+    public void setEndereco(Endereco enderecoDTO) {
         this.endereco = enderecoDTO;
     }
 
@@ -190,11 +196,11 @@ public class Desaparecido {
         this.tamanhoDesaparecido = tamanhoDesaparecido;
     }
 
-    public List<Foto> getFotos() {
+    public List<String> getFotos() {
         return fotos;
     }
 
-    public void setFotos(List<Foto> fotos) {
+    public void setFotos(List<String> fotos) {
         this.fotos = fotos;
     }
 

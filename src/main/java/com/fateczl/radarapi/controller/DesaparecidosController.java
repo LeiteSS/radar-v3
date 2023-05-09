@@ -19,7 +19,7 @@ public class DesaparecidosController {
     private DesaparecidosService service;
 
     @PostMapping("/desaparecidos")
-    public ResponseEntity<Desaparecido> save(@RequestBody DesaparecidoDTO dto) {
+    public ResponseEntity<Desaparecido> save(@RequestBody Desaparecido dto) {
         return ResponseEntity.ok(service.save(dto));
     }
 
@@ -34,7 +34,7 @@ public class DesaparecidosController {
     }
 
     @PutMapping("/desaparecidos/{id}")
-    public ResponseEntity<Desaparecido> update(@PathVariable Long id, @RequestBody DesaparecidoDTO dto) {
+    public ResponseEntity<Desaparecido> update(@PathVariable Long id, @RequestBody Desaparecido dto) {
         return ResponseEntity.ok(service.update(id, dto));
     }
 
