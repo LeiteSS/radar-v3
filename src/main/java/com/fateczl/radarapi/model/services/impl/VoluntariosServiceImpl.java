@@ -1,10 +1,11 @@
 package com.fateczl.radarapi.model.services.impl;
 
 import com.fateczl.radarapi.model.dto.VoluntarioDTO;
+import com.fateczl.radarapi.model.entities.Endereco;
 import com.fateczl.radarapi.model.entities.Voluntario;
-import com.fateczl.radarapi.model.repository.VoluntarioRepository;
 import com.fateczl.radarapi.model.repository.EnderecosRepository;
-import com.fateczl.radarapi.model.services.VoluntarioService;
+import com.fateczl.radarapi.model.repository.VoluntariosRepository;
+import com.fateczl.radarapi.model.services.VoluntariosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,24 +13,23 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class VoluntarioServiceImpl implements VoluntarioService {
+public class VoluntariosServiceImpl implements VoluntariosService {
     @Autowired
-    private VoluntarioRepository voluntariosRepository;
+    private VoluntariosRepository voluntariosRepository;
 
     @Autowired
     private EnderecosRepository enderecosRepository;
 
     @Override
     public Voluntario save(VoluntarioDTO dto) {
-        Voluntario voluntarioConvert = dto.toModel(dto);
+        Voluntario voluntario = dto.toModel(dto);
+        enderecosRepository.save(voluntario.getEndereco());
 
-        enderecosRepository.save(voluntarioConvert.getEndereco());
-
-        return  voluntariosRepository.save(voluntarioConvert);
+        return voluntariosRepository.save(voluntario);
     }
 
     @Override
-    public List<Voluntario> listAll() {
+    public List<Voluntario> getAll() {
         return voluntariosRepository.findAll();
     }
 
@@ -40,10 +40,13 @@ public class VoluntarioServiceImpl implements VoluntarioService {
 
     @Override
     public Voluntario update(Long id, VoluntarioDTO dto) {
-        Voluntario voluntarioConvert = dto.toModel(dto);
-        voluntarioConvert.setIdVoluntario(id);
+        Voluntario voluntario = dto.toModel(dto);
+        voluntario.setId(id);
 
-        return voluntariosRepository.save(voluntarioConvert);
+        enderecosRepository.save(voluntario.getEndereco());
+
+
+        return voluntariosRepository.save(voluntario);
     }
 
     @Override

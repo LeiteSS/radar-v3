@@ -6,9 +6,10 @@ import com.fateczl.radarapi.model.entities.Voluntario;
 import java.util.List;
 import java.util.Optional;
 
-public interface VoluntarioService {
+public interface VoluntariosService {
+
     Voluntario save(VoluntarioDTO dto);
-    List<Voluntario> listAll();
+    List<Voluntario> getAll();
     Optional<Voluntario> getVoluntario(Long id);
     Voluntario update(Long id, VoluntarioDTO dto);
     void delete(Long id);

@@ -3,113 +3,143 @@ package com.fateczl.radarapi.model.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Voluntario")
 public class Voluntario {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_voluntario")
-    private Long idVoluntario;
+    private Long id;
 
     @Column(nullable = false)
-    private String emailVoluntario;
+    private String nome;
 
     @Column(nullable = false)
-    private String nomeVoluntario;
+    private String sobrenome;
 
     @Column(nullable = false)
-    private String sobrenomeVoluntario;
+    private String dataNascimento;
+
+    @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
+    private String telefone;
+
+    @Column(nullable = false)
+    private String cpf;
 
     @OneToOne
     private Endereco endereco;
 
     @Column(nullable = false)
-    private String cpfVoluntario;
+    private boolean condicoes;
 
-    @Column(name = "telefone")
-    private String telefoneVoluntario;
+    @Column(nullable = false)
+    private boolean legitimidade;
 
     public Voluntario() {
     }
 
-    public Voluntario(Long idVoluntario, String nomeVoluntario, String sobrenomeVoluntario, String emailVoluntario, String telefoneVoluntario, String cpfVoluntario, Endereco endereco) {
-        
-        this.idVoluntario = idVoluntario;
-        this.nomeVoluntario = nomeVoluntario;
-        this.sobrenomeVoluntario = sobrenomeVoluntario;
-        this.cpfVoluntario = cpfVoluntario;
-        this.emailVoluntario = emailVoluntario;
-        this.telefoneVoluntario = telefoneVoluntario;
+    public Voluntario(Long id, String nome, String sobrenome, String dataNascimento, String email, String telefone, String cpf, Endereco endereco, boolean condicoes, boolean legitimidade) {
+        this.id = id;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.dataNascimento = dataNascimento;
+        this.email = email;
+        this.telefone = telefone;
+        this.cpf = cpf;
         this.endereco = endereco;
-        
+        this.condicoes = condicoes;
+        this.legitimidade = legitimidade;
     }
 
-    public Voluntario(String nomeVoluntario, String sobrenomeVoluntario, String emailVoluntario, String telefoneVoluntario, String cpfVoluntario, Endereco endereco) {
-        
-        this.nomeVoluntario = nomeVoluntario;
-        this.sobrenomeVoluntario = sobrenomeVoluntario;
-        this.cpfVoluntario = cpfVoluntario;
-        this.emailVoluntario = emailVoluntario;
-        this.telefoneVoluntario = telefoneVoluntario;
+    public Voluntario(String nome, String sobrenome, String dataNascimento, String email, String telefone, String cpf, Endereco endereco, boolean condicoes, boolean legitimidade) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.dataNascimento = dataNascimento;
+        this.email = email;
+        this.telefone = telefone;
+        this.cpf = cpf;
         this.endereco = endereco;
-        
-    }
-  
-    public Long getIdVoluntario() {
-        return idVoluntario;
+        this.condicoes = condicoes;
+        this.legitimidade = legitimidade;
     }
 
-    public void setIdVoluntario(Long idVoluntario) {
-        this.idVoluntario = idVoluntario;
+    public Long getId() {
+        return id;
     }
 
-    public String getNomeVoluntario() {
-        return nomeVoluntario;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setNomeVoluntario(String nomeVoluntario) {
-        this.nomeVoluntario = nomeVoluntario;
+    public String getNome() {
+        return nome;
     }
 
-    public String getSobreNomeVoluntario() {
-        return sobrenomeVoluntario;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setSobreNomeVoluntario(String sobrenomeVoluntario) {
-        this.sobrenomeVoluntario = sobrenomeVoluntario;
+    public String getSobrenome() {
+        return sobrenome;
     }
 
-    
-    public String getCpfVoluntario() {
-        return cpfVoluntario;
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
 
-    public void setCpfVoluntario(String cpfVoluntario) {
-        this.cpfVoluntario = cpfVoluntario;
+    public String getDataNascimento() {
+        return dataNascimento;
     }
 
-    public String getTelefoneVoluntario() {
-        return telefoneVoluntario;
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
-    public void setTelefoneVoluntario(String telefoneVoluntario) {
-        this.telefoneVoluntario = telefoneVoluntario;
+    public String getEmail() {
+        return email;
     }
 
-    public String getEmailVoluntario() {
-        return emailVoluntario;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setEmailVoluntario(String emailVoluntario) {
-        this.emailVoluntario = emailVoluntario;
+    public String getTelefone() {
+        return telefone;
     }
 
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
     public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Endereco enderecoDTO) {
-        this.endereco = enderecoDTO;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public boolean isCondicoes() {
+        return condicoes;
+    }
+
+    public void setCondicoes(boolean condicoes) {
+        this.condicoes = condicoes;
+    }
+
+    public boolean isLegitimidade() {
+        return legitimidade;
+    }
+
+    public void setLegitimidade(boolean legitimidade) {
+        this.legitimidade = legitimidade;
     }
 }
