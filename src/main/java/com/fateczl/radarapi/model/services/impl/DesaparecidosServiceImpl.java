@@ -4,7 +4,7 @@ import com.fateczl.radarapi.model.dto.DesaparecidoDTO;
 import com.fateczl.radarapi.model.entities.Desaparecido;
 import com.fateczl.radarapi.model.repository.DesaparecidosRepository;
 import com.fateczl.radarapi.model.repository.EnderecosRepository;
-import com.fateczl.radarapi.model.repository.FotosRepository;
+//import com.fateczl.radarapi.model.repository.FotosRepository;
 import com.fateczl.radarapi.model.services.DesaparecidosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,8 +21,8 @@ public class DesaparecidosServiceImpl implements DesaparecidosService {
     @Autowired
     private EnderecosRepository enderecosRepository;
 
-    @Autowired
-    private FotosRepository fotosRepository;
+    //@Autowired
+    //private FotosRepository fotosRepository;
 
     @Override
     @Transactional

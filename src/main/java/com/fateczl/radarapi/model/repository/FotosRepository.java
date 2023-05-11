@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Repository
-public interface FotosRepository extends JpaRepository<Foto, Long> {
-}
+//@Repository
+//public interface FotosRepository extends JpaRepository<Foto, Long> {
+//}

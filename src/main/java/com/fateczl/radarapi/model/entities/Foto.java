@@ -2,9 +2,9 @@ package com.fateczl.radarapi.model.entities;
 
 import javax.persistence.*;
 
-@Entity
+//@Entity
 public class Foto {
-    @Id
+   /* @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idFoto;
 
@@ -20,9 +20,9 @@ public class Foto {
     @Column(nullable = false)
     private String imageBytes;
 
-    /*@Lob
+    *//*@Lob
     @Column(columnDefinition = "BLOB")
-    private byte[] imageBytes;*/
+    private byte[] imageBytes;*//*
 
     public Foto() {
     }
@@ -122,5 +122,5 @@ public class Foto {
         public Foto build() {
             return new Foto(this);
         }
-    }
+    }*/
 }

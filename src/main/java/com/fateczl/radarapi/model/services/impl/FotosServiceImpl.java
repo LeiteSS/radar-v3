@@ -2,8 +2,8 @@ package com.fateczl.radarapi.model.services.impl;
 
 import com.fateczl.radarapi.model.entities.Desaparecido;
 import com.fateczl.radarapi.model.entities.Foto;
-import com.fateczl.radarapi.model.repository.FotosRepository;
-import com.fateczl.radarapi.model.services.FotosService;
+//import com.fateczl.radarapi.model.repository.FotosRepository;
+//import com.fateczl.radarapi.model.services.FotosService;
 import com.fateczl.radarapi.util.ImageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-@Service
+/*@Service
 public class FotosServiceImpl implements FotosService {
     @Autowired
     private FotosRepository fotosRepository;
@@ -34,4 +34,4 @@ public class FotosServiceImpl implements FotosService {
     public Stream<Foto> getAll() {
         return null;
     }
-}
+}*/

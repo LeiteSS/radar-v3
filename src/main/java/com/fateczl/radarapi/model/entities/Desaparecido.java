@@ -38,7 +38,7 @@ public class Desaparecido {
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "desaparecidos_fotos", joinColumns = @JoinColumn(name = "id_desaparecido"))
-    @Column(name = "fotos_id")
+    @Column(name = "fotos_url")
     private List<String> fotos;
 
 
