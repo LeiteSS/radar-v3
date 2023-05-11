@@ -1,5 +1,5 @@
 @Entity
-public class Familiares {
+public class Familiar {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -27,10 +27,10 @@ public class Familiares {
     private Desaparecido desaparecido;
 
 
-    public Familiares() {
+    public Familiar() {
     }
 
-    public Familiares(String nome, String cpf, String email, String telefone, String grauDeParentesco, LocalDate dataDeNascimento) {
+    public Familiar(String nome, String cpf, String email, String telefone, String grauDeParentesco, LocalDate dataDeNascimento) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
