@@ -19,6 +19,43 @@ public class FamiliaresController {
     public ResponseEntity<Familiar> createFamiliar(@RequestBody FamiliarDTO dto) {
         return ResponseEntity.ok(service.save(dto));
     }
+    
+    @GetMapping("/familiares")
 
+    public ResponseEntity<List<Familiar>> getAllFamiliares() {
+
+    List<Familiar> familiares = service.getAllFamiliares();
+
+    return ResponseEntity.ok(familiares);
+
+}
+
+    @GetMapping("/familiares/{id}")
+
+    public ResponseEntity<Familiar> getFamiliarById(@PathVariable Long id) {
+
+    Familiar familiar = service.getFamiliarById(id);
+
+    return ResponseEntity.ok(familiar);
+
+}
+    @PutMapping("/familiares/{id}")
+
+    public ResponseEntity<Familiar> updateFamiliarById(@PathVariable Long id, @RequestBody FamiliarDTO dto) {
+
+    Familiar updatedFamiliar = service.updateFamiliarById(id, dto);
+
+    return ResponseEntity.ok(updatedFamiliar);
+
+}
+    @DeleteMapping("/familiares/{id}")
+
+    public ResponseEntity<Void> deleteFamiliarById(@PathVariable Long id) {
+
+    service.deleteFamiliarById(id);
+
+    return ResponseEntity.noContent().build();
+
+}
 
 }
