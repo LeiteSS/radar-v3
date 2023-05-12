@@ -40,6 +40,15 @@ public class Endereco {
         this.uf = uf;
     }
 
+    public Endereco(String cep, String logradouro, String complemento, String bairro, String cidade, String uf) {
+        this.cep = cep;
+        this.logradouro = logradouro;
+        this.complemento = complemento;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.uf = uf;
+    }
+
     public Long getIdEndereco() {
         return idEndereco;
     }
