@@ -46,6 +46,16 @@ public class Familiar {
         this.desaparecido = desaparecido;
     }
 
+    public Familiar(String nome, String cpf, String email, String telefone, String grauDeParentesco, LocalDate dataDeNascimento, Desaparecido desaparecido) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.telefone = telefone;
+        this.grauDeParentesco = grauDeParentesco;
+        this.dataDeNascimento = dataDeNascimento;
+        this.desaparecido = desaparecido;
+    }
+
     public Long getId() {
         return id;
     }

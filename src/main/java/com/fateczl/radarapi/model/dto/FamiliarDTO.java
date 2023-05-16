@@ -85,7 +85,7 @@ public class FamiliarDTO {
 
     public Familiar toModel(FamiliarDTO dto) {
         return new Familiar(
-                id, dto.getNome(),
+                dto.getNome(),
                 dto.getCpf(),
                 dto.getEmail(),
                 dto.getTelefone(),
