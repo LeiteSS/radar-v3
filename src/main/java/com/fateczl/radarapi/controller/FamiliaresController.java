@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/v1")
@@ -24,7 +27,7 @@ public class FamiliaresController {
 
     public ResponseEntity<List<Familiar>> getAllFamiliares() {
 
-    List<Familiar> familiares = service.getAllFamiliares();
+    List<Familiar> familiares = service.listAll();
 
     return ResponseEntity.ok(familiares);
 
@@ -32,9 +35,9 @@ public class FamiliaresController {
 
     @GetMapping("/familiares/{id}")
 
-    public ResponseEntity<Familiar> getFamiliarById(@PathVariable Long id) {
+    public ResponseEntity<Optional<Familiar>> getFamiliarById(@PathVariable Long id) {
 
-    Familiar familiar = service.getFamiliarById(id);
+    Optional<Familiar> familiar = service.getById(id);
 
     return ResponseEntity.ok(familiar);
 
@@ -43,7 +46,7 @@ public class FamiliaresController {
 
     public ResponseEntity<Familiar> updateFamiliarById(@PathVariable Long id, @RequestBody FamiliarDTO dto) {
 
-    Familiar updatedFamiliar = service.updateFamiliarById(id, dto);
+    Familiar updatedFamiliar = service.update(id, dto);
 
     return ResponseEntity.ok(updatedFamiliar);
 
@@ -52,7 +55,7 @@ public class FamiliaresController {
 
     public ResponseEntity<Void> deleteFamiliarById(@PathVariable Long id) {
 
-    service.deleteFamiliarById(id);
+    service.delete(id);
 
     return ResponseEntity.noContent().build();
 
