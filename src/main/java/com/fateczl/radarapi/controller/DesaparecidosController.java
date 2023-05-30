@@ -6,6 +6,9 @@ import com.fateczl.radarapi.model.services.DesaparecidosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,9 +21,21 @@ public class DesaparecidosController {
     @Autowired
     private DesaparecidosService service;
 
+    @Autowired
+    SimpMessagingTemplate simpMessagingTemplate;
+
     @PostMapping("/desaparecidos")
+    @MessageMapping("/ideia")
+    @SendTo("/")
     public ResponseEntity<Desaparecido> save(@RequestBody DesaparecidoDTO dto) {
-        return ResponseEntity.ok(service.save(dto));
+        Desaparecido desaparecido = service.save(dto);
+
+        if (desaparecido != null) {
+            // https://haseeamarathunga.medium.com/create-a-spring-boot-angular-websocket-using-sockjs-and-stomp-cb339f766a98
+            simpMessagingTemplate.convertAndSend("/app", "Nova desaparecido cadastrado!");
+        }
+
+        return ResponseEntity.ok(desaparecido);
     }
 
     @GetMapping("/desaparecidos")
