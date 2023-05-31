@@ -1,10 +1,8 @@
 package com.fateczl.radarapi.model.dto;
 
-import com.fateczl.radarapi.model.entities.Endereco;
 import com.fateczl.radarapi.model.entities.Funcionario;
 
-import javax.persistence.Column;
-import javax.persistence.OneToOne;
+import java.util.List;
 
 public class FuncionarioDTO {
     private String nome;
@@ -12,18 +10,31 @@ public class FuncionarioDTO {
     private String cpf;
     private String email;
     private String dataNascimento;
-    //private Endereco endereco;
+    private List<String> roles;
+    private String username;
+    private String password;
+//private Endereco endereco;
 
     public FuncionarioDTO() {
     }
 
-    public FuncionarioDTO(String nome, String sobrenome, String cpf, String email, String dataNascimento) {
+    public FuncionarioDTO(String nome, String sobrenome, String cpf, String email, String dataNascimento, List<String> roles, String username, String password) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.cpf = cpf;
         this.email = email;
         this.dataNascimento = dataNascimento;
-        //this.endereco = endereco;
+        this.roles = roles;
+        this.username = username;
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getNome() {
@@ -66,6 +77,22 @@ public class FuncionarioDTO {
         this.dataNascimento = dataNascimento;
     }
 
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     /*public Endereco getEndereco() {
         return endereco;
     }
@@ -78,10 +105,12 @@ public class FuncionarioDTO {
         return new Funcionario(
                 dto.getNome(),
                 dto.getSobrenome(),
+                dto.getUsername(),
                 dto.getCpf(),
                 dto.getEmail(),
-                dto.getDataNascimento()
-                //dto.getEndereco()
+                dto.getDataNascimento(),
+                dto.getRoles(),
+                dto.getPassword()
         );
     }
 }

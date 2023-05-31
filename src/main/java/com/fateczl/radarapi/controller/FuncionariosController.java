@@ -1,6 +1,8 @@
 package com.fateczl.radarapi.controller;
 
 import com.fateczl.radarapi.model.dto.FuncionarioDTO;
+import com.fateczl.radarapi.model.dto.LoginDTO;
+import com.fateczl.radarapi.model.dto.TokenDTO;
 import com.fateczl.radarapi.model.entities.Funcionario;
 import com.fateczl.radarapi.model.services.FuncionariosService;
 import org.springframework.beans.factory.annotation.Autowired;
